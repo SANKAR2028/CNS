@@ -1,5 +1,9 @@
 ## EX. NO: 1 : IMPLEMENTATION OF CAESAR CIPHER
- 
+```
+NAME: SANKAR S
+DEPT: B.E/CSE
+REG NO: 212224040291
+``` 
 
 ## AIM:
 
@@ -27,8 +31,34 @@ becomes C. To change a message back, each letter is replaced by the one three be
 ### STEP-5: Display the cipher text obtained above.
 
 
-PROGRAM :-
+## PROGRAM :-
+```
+def caesar_cipher_encrypt(plain_text, key):
+    cipher_text = ""
+    for ch in plain_text:
+        if ch.isupper():
+            cipher_text += chr((ord(ch) - ord('A') + key) % 26 + ord('A'))
+        elif ch.islower():
+            cipher_text += chr((ord(ch) - ord('a') + key) % 26 + ord('a'))
+        else:
+            cipher_text += ch
+    return cipher_text
+def caesar_cipher_decrypt(cipher_text, key):
+    return caesar_cipher_encrypt(cipher_text, -key)
+plain = "SANKAR"
+key = 3
+print("PLAIN TEXT:", plain)
+print("KEY VALUE:", key)
+encrypted = caesar_cipher_encrypt(plain, key)
+print("ENCRYPTED TEXT:", encrypted)
+decrypted = caesar_cipher_decrypt(encrypted, key)
+print("AFTER DECRYPTION:", decrypted)
+
+```
 
 
 
-OUTPUT :-
+## OUTPUT :-
+
+<img width="1557" height="692" alt="image" src="https://github.com/user-attachments/assets/fe2cf2f1-86a9-444c-807f-663b84a58e7c" />
+
